@@ -45,7 +45,7 @@ const publications = [
   year = {2026},
   address = {Guangzhou, China}
 }`,
-    links: [{ label: "program", href: "https://api.conflux.events/public/78/program" }],
+    links: [],
   },
   {
     title: "Machine Learning and Kalman Filtering for Nanomechanical Mass Spectrometry",
