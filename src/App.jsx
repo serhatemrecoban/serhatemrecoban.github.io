@@ -44,7 +44,15 @@ const publications = [
     venue: "IEEE Sensors Journal, 2024",
     authors: "Mete Erdogan, Nuri Berke Baytekin, Serhat Emre Çoban, Alper Demir",
     abstract:
-      "This work studies machine-learning and Kalman-filtering based approaches for event detection and size estimation in nanomechanical mass spectrometry.",
+      "Nanomechanical resonant sensors are used in mass spectrometry via detection of resonance frequency jumps. " +
+      "There is a fundamental trade-off between detection speed and accuracy. Temporal and size resolution are limited by the resonator characteristics and noise. " +
+      "A Kalman filtering technique, augmented with maximum-likelihood estimation, was recently proposed as a Pareto optimal solution. " +
+      "We present enhancements and robust realizations for this technique, including a confidence boosted thresholding approach as well as machine learning for event detection. " +
+      "We describe learning techniques that are based on neural networks and boosted decision trees for temporal location and event size estimation. " +
+      "In the pure learning based approach that discards the Kalman filter, the raw data from the sensor are used in training a model for both location and size prediction. " +
+      "In the alternative approach that augments a Kalman filter, the event likelihood history is used in a binary classifier for event occurrence. " +
+      "Locations and sizes are predicted using maximum-likelihood, followed by a Kalman filter that continually improves the size estimate. " +
+      "We present detailed comparisons of the learning based schemes and the confidence boosted thresholding approach, and demonstrate robust performance for a practical realization.",
     links: [
       { label: "arXiv", href: "https://arxiv.org/abs/2306.00563" },
       { label: "doi", href: "https://doi.org/10.1109/JSEN.2024.3350730" },
