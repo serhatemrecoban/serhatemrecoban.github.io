@@ -33,11 +33,19 @@ const publications = [
     venue: "IEEE International Symposium on Information Theory (ISIT), 2026",
     authors: "Serhat Emre Çoban, Yanina Y. Shkel, Emre Telatar",
     abstract:
-      "We study perfect functional representations and related structural questions in information theory. A short abstract can be added here later.",
-    links: [
-      { label: "paper", href: "#" },
-      { label: "bibtex", href: "#" },
-    ],
+      "For given random variables (X, Y), functional representation lemma states that there exists a random variable Z and a deterministic function g such that Y = g(X, Z), and X is independent of Z. " +
+      "In other words, Z captures all the information about Y not contained in X. We refer to Z as a \"perfect functional representation\" if it satisfies I(Y; Z) = H(Y|X). " +
+      "We show that the existence of perfect representation depends solely on the conditional distribution p_{Y|X} and define the corresponding conditional distributions as perfectly representable. " +
+      "We provide a necessary and sufficient condition for p_{Y|X} to be perfectly representable. " +
+      "Finally, we cast the problem of checking perfect representability as a linear program and discuss its computational tractability.",
+    bibtex: `@inproceedings{coban2026perfect,
+  author = {Serhat Emre {\\c{C}}oban and Yanina Y. Shkel and Emre Telatar},
+  title = {On Perfect Functional Representations},
+  booktitle = {Proceedings of the 2026 IEEE International Symposium on Information Theory (ISIT)},
+  year = {2026},
+  address = {Guangzhou, China}
+}`,
+    links: [{ label: "program", href: "https://api.conflux.events/public/78/program" }],
   },
   {
     title: "Machine Learning and Kalman Filtering for Nanomechanical Mass Spectrometry",
@@ -89,6 +97,7 @@ function Portrait() {
 
 function Publication({ paper }) {
   const [open, setOpen] = useState(false);
+  const [bibtexOpen, setBibtexOpen] = useState(false);
 
   return (
     <article className="publication">
@@ -105,9 +114,19 @@ function Publication({ paper }) {
         <button type="button" onClick={() => setOpen(!open)}>
           {open ? "hide abstract" : "abstract"}
         </button>
+        {paper.bibtex && (
+          <button type="button" onClick={() => setBibtexOpen(!bibtexOpen)}>
+            {bibtexOpen ? "hide bibtex" : "bibtex"}
+          </button>
+        )}
       </div>
 
       {open && <p className="abstract">{paper.abstract}</p>}
+      {bibtexOpen && (
+        <pre className="bibtex">
+          <code>{paper.bibtex}</code>
+        </pre>
+      )}
     </article>
   );
 }
@@ -421,6 +440,22 @@ h3 {
 .abstract {
   max-width: 78ch;
   margin-top: 10px;
+}
+
+.bibtex {
+  max-width: 78ch;
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  overflow-x: auto;
+  border-left: 2px solid var(--line);
+  background: #f8f8f8;
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.bibtex code {
+  font-family: "Courier New", Courier, monospace;
 }
 
 ul {
