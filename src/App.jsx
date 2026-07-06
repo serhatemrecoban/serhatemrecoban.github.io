@@ -7,14 +7,14 @@ const profile = {
   location: "Lausanne, Switzerland",
   email: "serhat.coban@epfl.ch",
   scholarUrl: "https://scholar.google.com/citations?user=1AlofT0AAAAJ&hl=en&oi=ao",
-  websiteUrl: "https://serhatemrecoban.github.io/",
+  githubUrl: "https://github.com/serhatemrecoban",
   yaninaUrl: "https://theory.epfl.ch/yanina/",
   emreUrl: "https://people.epfl.ch/emre.telatar",
 };
 
 const links = [
   { label: "Google Scholar", href: profile.scholarUrl },
-  { label: "Website", href: profile.websiteUrl },
+  { label: "GitHub", href: profile.githubUrl },
 ];
 
 const researchInterests = [
@@ -104,6 +104,33 @@ function Publication({ paper }) {
   );
 }
 
+function ContactLinks() {
+  const [showEmail, setShowEmail] = useState(false);
+
+  return (
+    <p className="contact">
+      {showEmail ? (
+        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+      ) : (
+        <button
+          type="button"
+          className="link-button"
+          onClick={() => setShowEmail(true)}
+        >
+          show email
+        </button>
+      )}
+
+      {links.map((link) => (
+        <span key={link.label}>
+          <span className="dot">{" \u00b7 "}</span>
+          <a href={link.href}>{link.label}</a>
+        </span>
+      ))}
+    </p>
+  );
+}
+
 export default function App() {
   return (
     <>
@@ -145,15 +172,7 @@ export default function App() {
               meaning.
             </p>
 
-            <p className="contact">
-              Email: <a href={`mailto:${profile.email}`}>{profile.email}</a>
-              {links.map((link) => (
-                <span key={link.label}>
-                  <span className="dot"> · </span>
-                  <a href={link.href}>{link.label}</a>
-                </span>
-              ))}
-            </p>
+            <ContactLinks />
           </div>
         </section>
 
@@ -322,6 +341,19 @@ h3 {
 
 .contact {
   margin-top: 20px;
+}
+
+.link-button {
+  border: none;
+  background: none;
+  color: var(--link);
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.link-button:hover {
+  text-decoration: underline;
 }
 
 .dot {
