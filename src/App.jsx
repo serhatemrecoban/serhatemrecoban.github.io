@@ -130,6 +130,14 @@ const projects = [
   },
 ];
 
+const talks = [
+  {
+    title: "On Perfect Functional Representations",
+    venue: "IEEE International Symposium on Information Theory (ISIT)",
+    date: "2026",
+  },
+];
+
 const teaching = [
   {
     course: "COM-202 Signal Processing",
@@ -182,6 +190,7 @@ function Header() {
         <a href="#about">About</a>
         <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
+        <a href="#talks">Talks</a>
         <a href="#teaching">Teaching</a>
         <a href="#misc">Miscellaneous</a>
       </nav>
@@ -349,17 +358,31 @@ export default function App() {
           </div>
         </section>
 
+        <section id="talks" className="section">
+          <h2>Talks</h2>
+
+          <ul className="detail-list">
+            {talks.map((talk) => (
+              <li key={`${talk.title}-${talk.date}`}>
+                <strong>{talk.title}</strong>
+                <span className="detail-meta">{talk.venue}</span>
+                <span className="detail-terms">{talk.date}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         <section id="teaching" className="section">
           <h2>Teaching</h2>
 
-          <ul className="teaching-list">
+          <ul className="detail-list">
             {teaching.map((item) => (
               <li key={`${item.course}-${item.terms}`}>
                 <strong>{item.course}</strong>
-                <span className="teaching-meta">
+                <span className="detail-meta">
                   {item.role}, {item.institution}
                 </span>
-                <span className="teaching-terms">{item.terms}</span>
+                <span className="detail-terms">{item.terms}</span>
               </li>
             ))}
           </ul>
@@ -604,26 +627,26 @@ h3 {
   font-family: "Courier New", Courier, monospace;
 }
 
-.teaching-list {
+.detail-list {
   list-style: none;
   padding-left: 0;
 }
 
-.teaching-list li {
+.detail-list li {
   margin-bottom: 16px;
 }
 
-.teaching-list strong,
-.teaching-meta,
-.teaching-terms {
+.detail-list strong,
+.detail-meta,
+.detail-terms {
   display: block;
 }
 
-.teaching-meta {
+.detail-meta {
   color: var(--muted);
 }
 
-.teaching-terms {
+.detail-terms {
   margin-top: 2px;
 }
 
