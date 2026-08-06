@@ -6,7 +6,6 @@ const profile = {
   subtitle: "Ph.D. Student in Information Theory",
   affiliation: "EPFL",
   location: "Lausanne, Switzerland",
-  email: "serhat.coban@epfl.ch",
   scholarUrl: "https://scholar.google.com/citations?user=1AlofT0AAAAJ&hl=en&oi=ao",
   githubUrl: "https://github.com/serhatemrecoban",
   yaninaUrl: "https://theory.epfl.ch/yanina/",
@@ -24,6 +23,14 @@ const externalLinkProps = {
 };
 
 const opensInNewTab = (href) => Boolean(href) && !href.startsWith("#");
+
+const encodedContact = [
+  122, 108, 121, 111, 104, 123, 53, 106, 118, 105,
+  104, 117, 71, 108, 119, 109, 115, 53, 106, 111,
+];
+
+const decodeContact = () =>
+  String.fromCharCode(...encodedContact.map((character) => character - 7));
 
 const portraitPhotoMode = 1; // 1: fixed selected photo, 0: random from pool
 const selectedPortraitPhoto = "/photos/Emre-personal-website-photo-9.jpeg";
@@ -342,17 +349,17 @@ function Publication({ paper }) {
 }
 
 function ContactLinks() {
-  const [showEmail, setShowEmail] = useState(false);
+  const [email, setEmail] = useState(null);
 
   return (
     <p className="contact">
-      {showEmail ? (
-        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+      {email ? (
+        <a href={`mailto:${email}`}>{email}</a>
       ) : (
         <button
           type="button"
           className="link-button"
-          onClick={() => setShowEmail(true)}
+          onClick={() => setEmail(decodeContact())}
         >
           show email
         </button>
