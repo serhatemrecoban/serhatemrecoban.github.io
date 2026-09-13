@@ -71,11 +71,18 @@ const publications = [
     bibtex: `@inproceedings{coban2026perfect,
   author = {Serhat Emre {\\c{C}}oban and Yanina Y. Shkel and Emre Telatar},
   title = {On Perfect Functional Representations},
-  booktitle = {Proceedings of the 2026 IEEE International Symposium on Information Theory (ISIT)},
+  booktitle = {2026 IEEE International Symposium on Information Theory (ISIT)},
+  pages = {1--6},
+  publisher = {IEEE},
   year = {2026},
-  address = {Guangzhou, China}
+  doi = {10.1109/ISIT62367.2026.11653684}
 }`,
-    links: [{ label: "paper", href: "" }],
+    links: [
+      {
+        label: "paper",
+        href: "https://doi.org/10.1109/ISIT62367.2026.11653684",
+      },
+    ],
   },
   {
     title: "Machine Learning and Kalman Filtering for Nanomechanical Mass Spectrometry",
