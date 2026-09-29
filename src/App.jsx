@@ -108,14 +108,14 @@ const publications = [
 const projects = [
   {
     title: "LeanInfoTheory",
-    venue: "Lean formalization project (ongoing)",
+    venue: "Information theory library for Lean 4",
     authors: "Serhat Emre Coban",
     abstract:
-      "We present LeanInfoTheory, an early-stage Lean/mathlib project for finite information measures and a planned entropy-inequality certificate pipeline. " +
-      "The current development builds a mathlib-based finite-PMF Shannon foundation, including entropy, conditional entropy, mutual information, conditional mutual information, and named marginals. " +
-      "The library proves relabeling, coordinate-swap, product-reassociation, upper-bound, and uniform-law sanity theorems, and includes a semantic bridge identifying finite entropy with expected self-information over PMF.toMeasure. " +
-      "On the automation side, it develops formal entropy expressions, primitive Shannon inequality soundness theorems, and a proof-carrying checked-certificate layer with exact rational decomposition matching. " +
-      "As a first non-toy demo, the project derives entropy submodularity from a validated conditional-mutual-information certificate, with future work aimed at KL/conditional-law bridges, external certificate import, and network-information-theory converse examples.",
+      "LeanInfoTheory is a reusable, machine-checked Lean 4 and mathlib library for finite discrete information theory. " +
+      "It provides a coherent finite-PMF API for entropy, conditional entropy, mutual information, conditional mutual information, and KL divergence, together with finite channels, independence, Markov chains, data-processing theorems, Fano inequalities, convexity results, and sufficient statistics. " +
+      "The library connects its finite definitions to mathlib's measure-theoretic foundations through semantic bridges and includes chain rules, equality characterizations, and finite-family results. " +
+      "Its first stable release, v0.1.0, contains 31 supported modules and 601 documented public declarations, with generated API documentation and validation that rejects proof placeholders. " +
+      "LeanInfoTheory is intended as a general foundation for downstream research formalizations, while certificate tooling and paper-specific constructions remain separate projects.",
     links: [
       {
         label: "Website",
