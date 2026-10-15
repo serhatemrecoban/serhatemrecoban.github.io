@@ -127,6 +127,26 @@ const projects = [
     ],
   },
   {
+    title: "On Perfect Functional Representations",
+    venue: "Lean formalization project",
+    authors: "Serhat Emre Coban",
+    abstract:
+      "We present a Lean 4 formalization of the definitions and main results of the ISIT 2026 paper \"On Perfect Functional Representations\" by Serhat Emre Coban, Yanina Y. Shkel, and Emre Telatar. " +
+      "Built on LeanInfoTheory v0.1.0, the development covers functional and perfect representations, canonicalization, singularity, binary cases, and finite maximal coupling. " +
+      "It formalizes a constructive normal form for channel operations, a structural characterization of perfectly representable channels, and primal and dual linear-programming criteria for finite singular channels. " +
+      "The formalization makes finite-alphabet and support assumptions explicit and is accompanied by a mathematical blueprint and source-linked Lean documentation.",
+    links: [
+      {
+        label: "Website",
+        href: "https://serhatemrecoban.github.io/PerfectFunctionalRepresentationsLean/",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/serhatemrecoban/PerfectFunctionalRepresentationsLean",
+      },
+    ],
+  },
+  {
     title: "Formally Verified PCP Constructions",
     venue: "Lean formalization project",
     authors:
