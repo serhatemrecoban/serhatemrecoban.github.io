@@ -402,7 +402,7 @@ export default function App() {
             </p>
 
             <p>
-              I am a third-year Ph.D. student at EPFL, advised by{" "}
+              I am a fourth-year Ph.D. student at EPFL, advised by{" "}
               <a href={profile.yaninaUrl} {...externalLinkProps}>
                 Prof. Yanina Y. Shkel
               </a>{" "}
