@@ -1,8 +1,7 @@
 import { useState } from "react";
 
 const profile = {
-  name: "Serhat Emre Çoban",
-  asciiName: "Serhat Emre Coban",
+  name: "Serhat Emre Coban",
   subtitle: "Ph.D. Student in Information Theory",
   affiliation: "EPFL",
   location: "Lausanne, Switzerland",
@@ -61,7 +60,7 @@ const publications = [
   {
     title: "On Perfect Functional Representations",
     venue: "IEEE International Symposium on Information Theory (ISIT), 2026",
-    authors: "Serhat Emre Çoban, Yanina Y. Shkel, Emre Telatar",
+    authors: "Serhat Emre Coban, Yanina Y. Shkel, Emre Telatar",
     abstract:
       "For given random variables (X, Y), functional representation lemma states that there exists a random variable Z and a deterministic function g such that Y = g(X, Z), and X is independent of Z. " +
       "In other words, Z captures all the information about Y not contained in X. We refer to Z as a \"perfect functional representation\" if it satisfies I(Y; Z) = H(Y|X). " +
@@ -69,7 +68,7 @@ const publications = [
       "We provide a necessary and sufficient condition for p_{Y|X} to be perfectly representable. " +
       "Finally, we cast the problem of checking perfect representability as a linear program and discuss its computational tractability.",
     bibtex: `@inproceedings{coban2026perfect,
-  author = {Serhat Emre {\\c{C}}oban and Yanina Y. Shkel and Emre Telatar},
+  author = {Serhat Emre Coban and Yanina Y. Shkel and Emre Telatar},
   title = {On Perfect Functional Representations},
   booktitle = {2026 IEEE International Symposium on Information Theory (ISIT)},
   pages = {1--6},
@@ -87,7 +86,7 @@ const publications = [
   {
     title: "Machine Learning and Kalman Filtering for Nanomechanical Mass Spectrometry",
     venue: "IEEE Sensors Journal, 2024",
-    authors: "Mete Erdogan, Nuri Berke Baytekin, Serhat Emre Çoban, Alper Demir",
+    authors: "Mete Erdogan, Nuri Berke Baytekin, Serhat Emre Coban, Alper Demir",
     abstract:
       "Nanomechanical resonant sensors are used in mass spectrometry via detection of resonance frequency jumps. " +
       "There is a fundamental trade-off between detection speed and accuracy. Temporal and size resolution are limited by the resonator characteristics and noise. " +
@@ -401,9 +400,6 @@ export default function App() {
             <p className="subtitle">
               {profile.subtitle}, {profile.affiliation}
             </p>
-            <p className="name-note">
-              Also written as {profile.asciiName} in ASCII-only contexts.
-            </p>
 
             <p>
               I am a third-year Ph.D. student at EPFL, advised by{" "}
@@ -652,14 +648,8 @@ h3 {
 }
 
 .subtitle {
-  margin-bottom: 4px;
-  color: var(--muted);
-}
-
-.name-note {
   margin-bottom: 22px;
   color: var(--muted);
-  font-size: 0.95rem;
 }
 
 .intro p {
