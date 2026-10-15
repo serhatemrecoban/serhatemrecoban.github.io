@@ -406,7 +406,7 @@ export default function App() {
               <a href={profile.yaninaUrl} {...externalLinkProps}>
                 Prof. Yanina Y. Shkel
               </a>{" "}
-              and co-advised by{" "}
+              and{" "}
               <a href={profile.emreUrl} {...externalLinkProps}>
                 Prof. Emre Telatar
               </a>
