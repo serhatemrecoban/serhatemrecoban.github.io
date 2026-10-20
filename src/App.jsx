@@ -293,24 +293,44 @@ const service = [
 
 const courseNotes = [
   {
-    topic: "Information Theory",
-    notes: [
-      {
-        title: "Entropy of a Binary Variable",
-        description: "Example course note",
-        href: "/pdfs/course-notes/example-information-theory.pdf",
-      },
-    ],
+    title: "Communication Theory",
+    href: "/pdfs/course-notes/communication-theory.pdf",
   },
   {
-    topic: "Linear Algebra",
-    notes: [
-      {
-        title: "Orthogonal Projection",
-        description: "Example course note",
-        href: "/pdfs/course-notes/example-linear-algebra.pdf",
-      },
-    ],
+    title: "Graph Theory",
+    href: "/pdfs/course-notes/graph-theory.pdf",
+  },
+  {
+    title: "Adaptive Signal Processing",
+    href: "/pdfs/course-notes/adaptive-signal-processing.pdf",
+  },
+  {
+    title: "Control Theory",
+    href: "/pdfs/course-notes/control-theory.pdf",
+  },
+  {
+    title: "Detection and Estimation",
+    href: "/pdfs/course-notes/detection-and-estimation.pdf",
+  },
+  {
+    title: "Digital Communications",
+    href: "/pdfs/course-notes/digital-communications.pdf",
+  },
+  {
+    title: "Digital Signal Processing",
+    href: "/pdfs/course-notes/digital-signal-processing.pdf",
+  },
+  {
+    title: "Linear System Theory",
+    href: "/pdfs/course-notes/linear-system-theory.pdf",
+  },
+  {
+    title: "Machine Learning",
+    href: "/pdfs/course-notes/machine-learning.pdf",
+  },
+  {
+    title: "Random Processes",
+    href: "/pdfs/course-notes/random-processes.pdf",
   },
 ];
 
@@ -441,28 +461,23 @@ function CourseNotesPage() {
 
         <div className="section">
           <h1>Course Notes</h1>
-          <p className="subtitle">{profile.name}</p>
         </div>
 
-        {courseNotes.map((course) => (
-          <section className="section" key={course.topic}>
-            <h2>{course.topic}</h2>
-            <ul className="detail-list">
-              {course.notes.map((note) => (
-                <li key={note.href}>
-                  <h3>
-                    <a href={note.href} {...externalLinkProps}>
-                      {note.title}
-                    </a>
-                  </h3>
-                  <span className="detail-meta">
-                    {note.description} &middot; PDF &middot; 1 page
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
+        <ol className="course-notes-list">
+          {courseNotes.map((note) => (
+            <li key={note.href}>
+              {note.title}{" "}
+              <a
+                className="course-note-link"
+                href={note.href}
+                aria-label={`${note.title} PDF (opens in a new tab)`}
+                {...externalLinkProps}
+              >
+                [pdf]
+              </a>
+            </li>
+          ))}
+        </ol>
 
         <footer>
           © {new Date().getFullYear()} {profile.name}
@@ -608,10 +623,18 @@ export default function App() {
         <section id="notes-books" className="section">
           <h2>Notes &amp; Books</h2>
 
-          <p>
-            <a href="/course-notes/" {...externalLinkProps}>
-              Course Notes
+          <div className="notes-heading">
+            <h3>Course Notes</h3>
+            <a
+              href="/course-notes/"
+              aria-label="Course Notes (opens in a new tab)"
+              {...externalLinkProps}
+            >
+              [link]
             </a>
+          </div>
+          <p className="notes-description">
+            Various notes in electrical engineering, computer science, and mathematics.
           </p>
         </section>
 
@@ -876,6 +899,44 @@ h3 {
 
 .detail-terms {
   margin-top: 2px;
+}
+
+.notes-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.notes-heading h3 {
+  margin-bottom: 0;
+  color: #000000;
+  font-weight: 700;
+}
+
+.notes-description {
+  color: #000000;
+  font-weight: 400;
+}
+
+.course-notes-list {
+  margin-top: 0;
+  padding-left: 2rem;
+  list-style-type: decimal;
+}
+
+.course-notes-list li {
+  margin-bottom: 12px;
+}
+
+.course-notes-list li::marker {
+  content: counter(list-item) ") ";
+}
+
+.course-note-link {
+  margin-left: 4px;
+  white-space: nowrap;
 }
 
 ul {
