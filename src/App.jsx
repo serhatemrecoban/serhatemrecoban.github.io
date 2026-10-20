@@ -291,6 +291,29 @@ const service = [
   },
 ];
 
+const courseNotes = [
+  {
+    topic: "Information Theory",
+    notes: [
+      {
+        title: "Entropy of a Binary Variable",
+        description: "Example course note",
+        href: "/pdfs/course-notes/example-information-theory.pdf",
+      },
+    ],
+  },
+  {
+    topic: "Linear Algebra",
+    notes: [
+      {
+        title: "Orthogonal Projection",
+        description: "Example course note",
+        href: "/pdfs/course-notes/example-linear-algebra.pdf",
+      },
+    ],
+  },
+];
+
 function Header() {
   return (
     <header className="site-header">
@@ -302,6 +325,7 @@ function Header() {
         <a href="#talks">Talks</a>
         <a href="#teaching">Teaching</a>
         <a href="#service">Service</a>
+        <a href="#notes-books">Notes &amp; Books</a>
         <a href="#misc">Miscellaneous</a>
       </nav>
     </header>
@@ -403,7 +427,60 @@ function ContactLinks() {
   );
 }
 
+function CourseNotesPage() {
+  return (
+    <>
+      <style>{styles}</style>
+
+      <main className="page">
+        <header className="site-header">
+          <nav aria-label="Main navigation">
+            <a href="/#notes-books">Home</a>
+          </nav>
+        </header>
+
+        <div className="section">
+          <h1>Course Notes</h1>
+          <p className="subtitle">{profile.name}</p>
+        </div>
+
+        {courseNotes.map((course) => (
+          <section className="section" key={course.topic}>
+            <h2>{course.topic}</h2>
+            <ul className="detail-list">
+              {course.notes.map((note) => (
+                <li key={note.href}>
+                  <h3>
+                    <a href={note.href} {...externalLinkProps}>
+                      {note.title}
+                    </a>
+                  </h3>
+                  <span className="detail-meta">
+                    {note.description} &middot; PDF &middot; 1 page
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+
+        <footer>
+          © {new Date().getFullYear()} {profile.name}
+        </footer>
+      </main>
+    </>
+  );
+}
+
 export default function App() {
+  if (
+    ["/course-notes", "/course-notes/", "/course-notes/index.html"].includes(
+      window.location.pathname,
+    )
+  ) {
+    return <CourseNotesPage />;
+  }
+
   return (
     <>
       <style>{styles}</style>
@@ -526,6 +603,16 @@ export default function App() {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section id="notes-books" className="section">
+          <h2>Notes &amp; Books</h2>
+
+          <p>
+            <a href="/course-notes/" {...externalLinkProps}>
+              Course Notes
+            </a>
+          </p>
         </section>
 
         <section id="misc" className="section">
