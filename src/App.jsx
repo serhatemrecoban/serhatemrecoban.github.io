@@ -58,6 +58,30 @@ const researchInterests = [
 
 const publications = [
   {
+    title: "Structure and Complexity of Perfect Functional Representations",
+    venue: "arXiv preprint, 2026 (extended version of the ISIT 2026 paper)",
+    authors: "Serhat Emre Coban, Yanina Y. Shkel, Emre Telatar",
+    abstract:
+      "For given random variables (X,Y), functional representation lemma states that there exists a random variable Z and a deterministic function g such that Y = g(X,Z), and X is independent of Z. " +
+      "In other words, Z captures all the information about Y not contained in X. We refer to Z as a \"perfect functional representation\" if it satisfies I(Y;Z) = H(Y|X). " +
+      "We show that the existence of perfect representation depends solely on the conditional distribution p_{Y|X} and define the corresponding conditional distributions as perfectly representable. " +
+      "We provide a necessary and sufficient condition for p_{Y|X} to be perfectly representable. " +
+      "Moreover, we cast the problem of checking perfect representability as a linear program, give an algorithm whose complexity is polynomial in |\u{1D4B4}| and exponential in |\u{1D4B3}|, and prove that deciding perfect representability is NP-complete for rational input matrices encoded in binary.",
+    bibtex: `@misc{coban2026structurecomplexityperfectfunctional,
+  title = {Structure and Complexity of Perfect Functional Representations},
+  author = {Serhat Emre Coban and Yanina Y. Shkel and Emre Telatar},
+  year = {2026},
+  eprint = {2611.25094},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.IT},
+  url = {https://arxiv.org/abs/2611.25094}
+}`,
+    links: [
+      { label: "arXiv", href: "https://arxiv.org/abs/2611.25094" },
+      { label: "pdf", href: "https://arxiv.org/pdf/2611.25094" },
+    ],
+  },
+  {
     title: "On Perfect Functional Representations",
     venue: "IEEE International Symposium on Information Theory (ISIT), 2026",
     authors: "Serhat Emre Coban, Yanina Y. Shkel, Emre Telatar",
@@ -813,6 +837,7 @@ h3 {
 }
 
 .publication {
+  min-width: 0;
   margin-bottom: 4px;
 }
 
