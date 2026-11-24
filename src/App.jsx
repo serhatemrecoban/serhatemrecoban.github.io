@@ -59,7 +59,7 @@ const researchInterests = [
 const publications = [
   {
     title: "Structure and Complexity of Perfect Functional Representations",
-    venue: "arXiv preprint, 2026 (extended version of the ISIT 2026 paper)",
+    venue: "arXiv preprint, 2026",
     authors: "Serhat Emre Coban, Yanina Y. Shkel, Emre Telatar",
     abstract:
       "For given random variables (X,Y), functional representation lemma states that there exists a random variable Z and a deterministic function g such that Y = g(X,Z), and X is independent of Z. " +
